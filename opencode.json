@@ -4,9 +4,9 @@
     "z-ai-coding": {
       "npm": "@ai-sdk/openai-compatible",
       "name": "Z.AI Coding Plan",
+      "env": ["ZAI_CODING_API_KEY"],
       "options": {
-        "baseURL": "https://open.bigmodel.cn/api/paas/v4",
-        "apiKey": "{env:ZAI_CODING_API_KEY}"
+        "baseURL": "https://open.bigmodel.cn/api/paas/v4"
       },
       "models": {
         "glm-4.7": {

@@ -28,6 +28,7 @@ jobs:
           persist-credentials: false
 
       - name: Run OpenCode
+        timeout-minutes: 30
         uses: anomalyco/opencode/github@latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
