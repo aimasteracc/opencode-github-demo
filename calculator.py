@@ -37,6 +37,17 @@ def sqrt(number: float) -> float:
     return number ** 0.5
 
 
+def modulo(a: float, b: float) -> float:
+    """Calculate the remainder of a divided by b.
+    
+    Raises:
+        ValueError: If b is zero.
+    """
+    if b == 0:
+        raise ValueError("Cannot perform modulo by zero")
+    return a % b
+
+
 if __name__ == "__main__":
     print("Calculator Demo")
     print(f"10 + 5 = {add(10, 5)}")
@@ -45,3 +56,4 @@ if __name__ == "__main__":
     print(f"10 / 5 = {divide(10, 5)}")
     print(f"2 ^ 8 = {power(2, 8)}")
     print(f"sqrt(16) = {sqrt(16)}")
+    print(f"10 % 3 = {modulo(10, 3)}")

@@ -3,7 +3,7 @@ Test cases for calculator module.
 """
 
 import pytest
-from calculator import add, subtract, multiply, divide, power, sqrt
+from calculator import add, subtract, multiply, divide, power, sqrt, modulo
 
 
 class TestAdd:
@@ -90,3 +90,24 @@ class TestSqrt:
 
     def test_sqrt_large_number(self):
         assert sqrt(10000) == 100.0
+
+
+class TestModulo:
+    def test_modulo_positive_numbers(self):
+        assert modulo(10, 3) == 1
+
+    def test_modulo_zero_dividend(self):
+        assert modulo(0, 5) == 0
+
+    def test_modulo_negative_dividend(self):
+        assert modulo(-10, 3) == 2
+
+    def test_modulo_negative_divisor(self):
+        assert modulo(10, -3) == -2
+
+    def test_modulo_floats(self):
+        assert modulo(7.5, 2.5) == 0.0
+
+    def test_modulo_by_zero_raises_error(self):
+        with pytest.raises(ValueError, match="Cannot perform modulo by zero"):
+            modulo(5, 0)
