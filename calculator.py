@@ -21,9 +21,27 @@ def divide(a: float, b: float) -> float:
     return a / b
 
 
+def power(base: float, exponent: float) -> float:
+    """Calculate base raised to the power of exponent."""
+    return base ** exponent
+
+
+def sqrt(number: float) -> float:
+    """Calculate the square root of a number.
+    
+    Raises:
+        ValueError: If number is negative.
+    """
+    if number < 0:
+        raise ValueError("Cannot calculate square root of a negative number")
+    return number ** 0.5
+
+
 if __name__ == "__main__":
     print("Calculator Demo")
     print(f"10 + 5 = {add(10, 5)}")
     print(f"10 - 5 = {subtract(10, 5)}")
     print(f"10 * 5 = {multiply(10, 5)}")
     print(f"10 / 5 = {divide(10, 5)}")
+    print(f"2 ^ 8 = {power(2, 8)}")
+    print(f"sqrt(16) = {sqrt(16)}")
