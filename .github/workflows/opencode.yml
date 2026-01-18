@@ -31,8 +31,9 @@ jobs:
         uses: anomalyco/opencode/github@latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ZAI_CODING_API_KEY: ${{ secrets.ZAI_CODING_API_KEY }}
         with:
-          model: github-copilot/claude-sonnet-4
+          model: z-ai-coding/glm-4.7
           use_github_token: true
           prompt: |
             You are an AI assistant helping with this repository.
