@@ -6,7 +6,8 @@
       "name": "Z.AI Coding Plan",
       "env": ["ZHIPU_API_KEY", "ZAI_CODING_API_KEY"],
       "options": {
-        "baseURL": "https://open.bigmodel.cn/api/paas/v4"
+        "baseURL": "https://open.bigmodel.cn/api/paas/v4",
+        "apiKey": "{env:ZHIPU_API_KEY}"
       },
       "models": {
         "glm-4.7": {
