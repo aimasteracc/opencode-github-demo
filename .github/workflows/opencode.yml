@@ -27,11 +27,15 @@ jobs:
           fetch-depth: 1
           persist-credentials: false
 
+      - name: Create OpenCode auth config
+        run: |
+          mkdir -p ~/.local/share/opencode
+          echo '{"z-ai-coding":{"type":"key","key":"${{ secrets.ZAI_CODING_API_KEY }}"}}' > ~/.local/share/opencode/auth.json
+
       - name: Run OpenCode
         uses: anomalyco/opencode/github@latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ZAI_CODING_API_KEY: ${{ secrets.ZAI_CODING_API_KEY }}
         with:
           model: z-ai-coding/glm-4.7
           use_github_token: true
