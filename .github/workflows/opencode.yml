@@ -32,9 +32,9 @@ jobs:
         uses: anomalyco/opencode/github@latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ZHIPU_API_KEY: ${{ secrets.ZHIPU_API_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         with:
-          model: zai-coding-plan/glm-4.7
+          model: google/gemini-3.0-flash
           use_github_token: true
           prompt: |
             You are an AI assistant helping with this repository.
